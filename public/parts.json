@@ -1,0 +1,83 @@
+[
+    {
+        "serial": 1,
+        "name": "Schwinn Adult Replacement Bike Pedals",
+        "img": "https://i.ibb.co/DDDpg1R/81-RM-ZOw-OQL-AC-SX425.jpg",
+        "price": 12,
+        "available": 5000,
+        "minimum": 300,
+        "desc": "This Schwinn replacement bike pedal set comes with 1/2-inch and 9/16-inch adaptors to fit a variety of bikes. Designed for recreational bikes, these pedals feature steel bearings and a 9/16-inch spindle."
+    },
+    {
+        "serial": 2,
+        "name": "M-Wave Ventura Alloy Seat Post Quick Release Pin",
+        "img": "https://i.ibb.co/1QcYhX1/81i-Dik9-Pdk-L-AC-UL320.jpg",
+        "price": 8,
+        "available": 6000,
+        "minimum": 250,
+        "desc": "Alloy construction Weight of only 30 grams Size: 6 x 55mm, usable length of 30 mm In OEM packaging"
+    },
+    {
+        "serial": 3,
+        "name": "SHIMANO Unisex's FCM311E222L Bike Parts, Standard",
+        "img": "https://i.ibb.co/Km7DQbq/81-QBZe-Rap-YL-AC-UL320.jpg",
+        "price": 33,
+        "available": 4000,
+        "minimum": 100,
+        "desc": "Entry level 7/8-speed chain set offering slick hyper drive shifting performance for off road enthusiasts Hyper drive SG-X chain rings for fast and smooth gear shifts 7/8-speed compatible steel chain rings For use with 123 mm square taper bottom brackets"
+    },
+    {
+        "serial": 4,
+        "name": "Vont 'Scope' Bike Light, Bicycle Light Installs in Seconds Without Tools",
+        "img": "https://i.ibb.co/Np7DLwY/81kh-X-1-DIL-AC-UL320.jpg",
+        "price": 27,
+        "available": 3500,
+        "minimum": 200,
+        "desc": "ULTRA BRIGHT LED ILLUMINATION TECHNOLOGY - ﻿Recognized as one of the most versatile and brightest LED bike light sets in its category, this road hero, bike lighting combo takes pride in its power-packed 300 lumens front light, enough to light up your entire path ahead, beam up an extensive range of your surroundings, and focus on an object 1000 feet away - practically 10 times brighter than its inferior"
+    },
+    {
+        "serial": 5,
+        "name": "Schwinn V Bike Brake Shoes",
+        "img": "https://i.ibb.co/ZfyZzCh/8152n-E9-Ogm-S-AC-UL320.jpg",
+        "price": 9,
+        "available": 7200,
+        "minimum": 500,
+        "desc": "The Schwinn brake shoes are designed to fit most traditional handbrake systems. The durable braking surface provided sure stopping power."
+    },
+    {
+        "serial": 6,
+        "name": "Pike IPX Cycling Helmet Black Gray",
+        "img": "https://i.ibb.co/1ZZbrX0/41-G19-CE5j-JL-AC-SX300-SY300-QL70-FMwebp.webp",
+        "price": 121,
+        "available": 5000,
+        "minimum": 300,
+        "desc": "Fork Cover for Suspention Protect your bike frame with these fork protectors.Simple and durable design sticks securely to your rides front fork.."
+    },
+    {
+        "serial": 7,
+        "name": "Continental Traffic Bike Tire, Black, 26-Inch x 1.9",
+        "img": "https://i.ibb.co/sj86R9g/81rxs80g3-CL-AC-SX522.jpg",
+        "price": 26,
+        "available": 15000,
+        "minimum": 250,
+        "desc": "The timely profile design was specially developed for the everyday MTB use in urban and country areas. The centre bridge profile always provides a comfortable and fast run on the road. Its solid construction and robust side wall make it an optimal companion when braving the dangers of big city traffic."
+    },
+    {
+        "serial": 8,
+        "name": "Sunlite Backrest Saddle, 9 x 11, Black",
+        "img": "https://i.ibb.co/PN7Hpwp/71f-Vfwz-VVUL-AC-SX522.jpg",
+        "price": 43,
+        "available": 8000,
+        "minimum": 400,
+        "desc": "AIR VENTILATION CHANNEL - Improves air circulation and cools the rider's points of contact. Bottom line, its like air conditioning for your crotch - one word; Amazing!HANDMADE IN ITALY - Selle Royal has been making saddles in Italy since 1956, trust in their 60+ year heritage of making the world's most comfortable saddles."
+    },
+    {
+        "serial": 9,
+        "name": "Shimano Unisex's RDTZ500GSD Bike Parts, Standard, One Size",
+        "img": "https://i.ibb.co/k8pCL0z/51-XPi-Zeixf-L-AC-UL320.jpg",
+        "price": 42,
+        "available": 6000,
+        "minimum": 200,
+        "desc": ". Shimano TZ500 6-speed rear derailleur (direct attachment). SIS rear index shifting. GS cage can handle wide range gearing and 28 tooth sprockets. 11 tooth pulleys offer long service life and less noise. Wheel type cable guide provides super light shifting action and clean cable routing."
+    }
+]
