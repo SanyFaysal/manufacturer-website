@@ -1,12 +1,22 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 
 const OrderRow = ({ order }) => {
-    const { img, partsName, price, name, email, quantity } = order
+    const { img, partsName, price, name, email, quantity, _id } = order;
+    const [parts, setOrders] = useState()
+    const handleDelete = () => {
+        fetch(`http://localhost:5000/removePart/${_id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
     return (
         <tr>
-            <td><FontAwesomeIcon icon={faTrash} className='text-2xl text-red-700 font-bold'></FontAwesomeIcon></td>
+            <td onClick={handleDelete}><FontAwesomeIcon icon={faTrash} className='text-2xl text-red-700 font-bold' ></FontAwesomeIcon></td>
             <td>
                 <div class="flex items-center space-x-3">
                     <div class="avatar">
