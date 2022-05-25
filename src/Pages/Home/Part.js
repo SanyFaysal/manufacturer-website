@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const Part = ({ part }) => {
     const { name, img, desc, minimum, available, price, _id } = part;
     const navigate = useNavigate();
+
     return (
         <div class="card bg-base-100 shadow-xl">
             <figure class="px-10 pt-10 w-64 mx-auto"><img src={img} alt="Shoes" /></figure>
