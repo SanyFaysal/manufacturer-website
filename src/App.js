@@ -20,12 +20,8 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/purchase/:_id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/myOrders' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
-        <Route path='/dashboard' element={<RequireAuth>
-          <Dashboard>
-            <Route index element={<MyOrders></MyOrders>}></Route>
-          </Dashboard>
-        </RequireAuth>}>
-
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}>
+          <Route index element={<MyOrders></MyOrders>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

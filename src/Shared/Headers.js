@@ -16,13 +16,11 @@ const Headers = () => {
                 <div className='flex'>
                     <li className='mt-3' onClick={() => signOut(auth)}>Log Out</li>
                     <div class="avatar placeholder mt-2 ml-3">
-                        <div class="bg-white text-black rounded-full w-8 h-8">
+                        <div class="bg-slate-600 text-white rounded-full w-8 h-8">
                             <label tabIndex="0" class="text-sm font-bold">{user?.displayName?.split(' ')[0].slice(0, 1)}{user?.displayName?.split(' ')[1].slice(0, 1)}</label>
                         </div>
                     </div>
                 </div>
-
-                {/* < tabIndex='0' class="btn m-1">Click</> */}
                 <ul tabIndex="0" class="dropdown-content menu p-2 shadow-lg   w-52">
                     <div class="avatar  mb-4 mt-5">
                         <div class="w-24 h-24 mt-2 rounded mx-auto">
