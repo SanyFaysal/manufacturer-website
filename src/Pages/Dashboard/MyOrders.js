@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
+import CancelOrderConfirmModal from './CancelOrderConfirmModal';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
-    const [orders, setOrders] = useState();
-    useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/parts/${user.email}`)
-                .then(res => res.json())
-                .then(data => setOrders(data))
-        }
-    }, [user])
-    if (loading) {
+    const [order, setOrder] = useState()
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/parts/${user.email}`).then(res => res.json()));
+    if (loading || isLoading) {
         return <Loading></Loading>
     }
     return (
@@ -34,20 +30,25 @@ const MyOrders = () => {
                             <th>Parts info</th>
                             <th>Buyer</th>
                             <th>Order Quantity</th>
-                            <th>Payment History</th>
+                            <th className='text-center'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders?.map(order => <OrderRow
+                            orders?.map((order, index) => <OrderRow
                                 key={order._id}
                                 order={order}
+                                index={index}
+                                setOrder={setOrder}
                             ></OrderRow>)
                         }
                     </tbody>
                 </table>
             </div>
-
+            <CancelOrderConfirmModal
+                order={order}
+                refetch={refetch}
+            ></CancelOrderConfirmModal>
         </div>
     );
 };
