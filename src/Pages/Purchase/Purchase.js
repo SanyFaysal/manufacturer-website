@@ -42,9 +42,9 @@ const Purchase = () => {
             })
     };
 
-    const handleQuant = (e) => {
-        setQuant(e.target.value)
-    }
+
+
+
 
     if (loading || !detail) {
         return <Loading></Loading>
@@ -67,7 +67,7 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Name</span>
                             </label>
-                            <input {...register("name", { required: true })} name="email" value={user?.displayName} readOnly class="input w-full input-bordered" />
+                            <input value={user?.displayName} readOnly class="input w-full input-bordered" />
                         </div>
                         <div className='mx-auto w-80'>
                             <label class="label">
@@ -94,7 +94,7 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Quantity</span>
                             </label>
-                            <input {...register("quantity")} value={quant} class="input w-full input-bordered " onChange={handleQuant} />
+                            <input {...register("quantity")} defaultValue={quant} class="input w-full input-bordered " onChange={(e) => setQuant(e.target.value)} />
                             {(quant < minimum) && <span className='text-red-500'>Please input minimum {minimum} pics or more </span>}
                             {(quant > available) && <span className='text-red-500'>Please input maximum {available} or fewer </span>}
                         </div>

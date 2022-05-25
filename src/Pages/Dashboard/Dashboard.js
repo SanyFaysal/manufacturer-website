@@ -18,9 +18,9 @@ const Dashboard = () => {
             </div>
             <div class="drawer-side shadow-lg ">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class=" menu p-4 overflow-y-auto w-48 bg-slate-200 text-base-content">
+                <ul class="border menu p-4 overflow-y-auto w-48 bg-slate-100 text-base-content">
                     <li className='font-bold shadow'><Link to='/dashboard'> <FontAwesomeIcon icon={faCartArrowDown} className="text-xl"></FontAwesomeIcon> My orders</Link> </li>
-                    <li className=' font-bold shadow'><Link to='/dashboard/addReview'><FontAwesomeIcon icon={faCommentAlt} className="text-xl"></FontAwesomeIcon> Add Review</Link></li>
+                    <li className=' font-bold shadow '><Link to='/dashboard/addReview'><FontAwesomeIcon icon={faCommentAlt} className="text-xl"></FontAwesomeIcon> Add Review</Link></li>
                     <li className='font-bold shadow'><Link to='/dashboard/addPart'><FontAwesomeIcon icon={faAdd} className="text-xl"></FontAwesomeIcon> Add Parts</Link></li>
                 </ul>
             </div>
