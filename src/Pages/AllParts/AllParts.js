@@ -1,6 +1,6 @@
 import React from 'react';
+import useParts from '../../hooks/useParts';
 import Part from '../Home/Part';
-import useParts from '../hooks/useParts';
 
 const AllParts = () => {
     const [parts] = useParts()

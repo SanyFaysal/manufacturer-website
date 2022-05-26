@@ -17,7 +17,9 @@ const AddReview = () => {
             ratings: rating,
             quality,
             desc,
-            userName: user?.displayName
+            userName: user?.displayName,
+            email: user?.email,
+
         }
         fetch('http://localhost:5000/review', {
             method: 'POST',

@@ -98,7 +98,7 @@ const Purchase = () => {
                             {(quant < minimum) && <span className='text-red-500'>Please input minimum {minimum} pics or more </span>}
                             {(quant > available) && <span className='text-red-500'>Please input maximum {available} or fewer </span>}
                         </div>
-                        <input disabled={(quant < minimum) || (quant > available)} type="submit" class="btn " value='Login' className='w-80 mx-auto btn block mt-5' />
+                        <input disabled={(quant < minimum) || (quant > available)} type="submit" class="btn " value='Purchase' className='w-80 mx-auto btn block mt-5' />
                     </form>
                 </div>
 

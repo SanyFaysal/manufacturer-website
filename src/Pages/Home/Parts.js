@@ -2,7 +2,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useParts from '../hooks/useParts';
+import useParts from '../../hooks/useParts';
 import Part from './Part';
 
 const Parts = () => {
