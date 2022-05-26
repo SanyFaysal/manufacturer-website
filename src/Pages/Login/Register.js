@@ -17,7 +17,9 @@ const Register = () => {
 
 
     const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password);
+        const { email, password } = data;
+        createUserWithEmailAndPassword(email, password);
+
         reset()
     };;
 

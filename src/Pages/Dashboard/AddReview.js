@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../../Shared/Loading'
 const AddReview = () => {
-    const [ratings, setRatings] = useState()
+    const [user, loading] = useAuthState(auth)
+    const [ratings, setRatings] = useState();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         let rating = event.target.rating.value;
@@ -13,6 +17,7 @@ const AddReview = () => {
             ratings: rating,
             quality,
             desc,
+            userName: user?.displayName
         }
         fetch('http://localhost:5000/review', {
             method: 'POST',
@@ -31,8 +36,9 @@ const AddReview = () => {
                     toast.error('Something went wrong. Please try once again')
                 )
             })
-        // console.log(event);
-
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     return (
         <div>
@@ -69,7 +75,7 @@ const AddReview = () => {
                                 </label>
                                 <textarea name='desc' class="textarea textarea-bordered h-24" required placeholder="White your review here ..."></textarea>
                             </div>
-                            <div class="card-actions justify-center">
+                            <div class="card-actions justify-end">
                                 <input type='submit' disabled={ratings > 5 || ratings < 1} class="btn btn-primary" value='Add Review' />
                             </div>
                         </form>
