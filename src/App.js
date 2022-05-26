@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import AllParts from './Pages/AllParts/AllParts';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/allParts' element={<AllParts></AllParts>}></Route>
         <Route path='/purchase/:_id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/myOrders' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}>

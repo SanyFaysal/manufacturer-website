@@ -1,5 +1,6 @@
+import { updateProfile } from 'firebase/auth';
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -7,7 +8,7 @@ import Loading from '../../Shared/Loading'
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
+    const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -16,10 +17,10 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
-    const onSubmit = data => {
-        const { email, password } = data;
-        createUserWithEmailAndPassword(email, password);
-
+    const onSubmit = async data => {
+        const { email, password, name } = data;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name })
         reset()
     };;
 

@@ -8,6 +8,7 @@ const Headers = () => {
     const [user] = useAuthState(auth)
     const pages = <>
         <li><Link to='/home'>Home</Link></li>
+        <li><Link to='/allParts'><Link to='/allParts'>All Parts</Link></Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/blogs'>Blog</Link></li>
         <li><Link to='/myProfile'>My Profile</Link></li>

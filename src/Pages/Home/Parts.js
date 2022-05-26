@@ -1,4 +1,7 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useParts from '../hooks/useParts';
 import Part from './Part';
 
@@ -16,6 +19,9 @@ const Parts = () => {
                         part={part}
                     ></Part>)
                 }
+            </div>
+            <div className='flex justify-end mr-12 mt-8'>
+                <button class="btn btn-sm btn-secondary "><Link to='/allParts'>See All <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> </Link></button>
             </div>
         </div>
     );

@@ -65,7 +65,7 @@ const MyProfile = () => {
                         <label tabIndex="0" class="text-6xl ">{user?.displayName?.split(' ')[0].slice(0, 1)}{user?.displayName?.split(' ')[1].slice(0, 1)}</label>
                     </div>
                     <h2 class="text-center text-3xl ">{user?.displayName}</h2>
-                    <h2 class="text-center text-sm badge badge block mx-auto ">{user?.email}</h2>
+                    <h2 class="text-center text-sm badge badge-ghost block mx-auto ">{user?.email}</h2>
                     <div className={details?.length ? 'form-control block w-3/5 mx-auto' : "hidden"}>
                         <p className=''>
                             <FontAwesomeIcon icon={faHome}></FontAwesomeIcon> Lives in <span className='font-bold'>{details[0]?.address}</span>
