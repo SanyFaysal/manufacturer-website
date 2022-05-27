@@ -1,32 +1,35 @@
-import { updateProfile } from 'firebase/auth';
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile, useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading'
 const Register = () => {
+
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
-        user,
+        eUser,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-
-
     const onSubmit = async data => {
         const { email, password, name } = data;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name })
         reset()
     };;
-
-
-    if (loading) {
+    const [user] = useAuthState(auth)
+    const [token] = useToken(user || eUser || gUser)
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
+    }
+    if (token) {
+        // navigate('/home')
     }
     return (
         <div class="card shadow-xl max-w-lg mx-auto my-8 py-12">

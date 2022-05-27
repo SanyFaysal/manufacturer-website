@@ -11,8 +11,6 @@ const Purchase = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [detail, setDetail] = useState({})
     const { name, desc, img, available, minimum, price } = detail;
-    const [quant, setQuant] = useState(detail.minimum);
-
     useEffect(() => {
         fetch(`http://localhost:5000/part/${_id}`)
             .then(res => res.json())
@@ -20,6 +18,7 @@ const Purchase = () => {
                 setDetail(data[0])
             })
     }, [_id])
+    const [quant, setQuant] = useState(detail.minimum);
     const onSubmit = data => {
         data.partsName = name;
         data.desc = desc;

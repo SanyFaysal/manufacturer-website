@@ -45,11 +45,12 @@ const AddProduct = () => {
                     <li>Manage All orders</li>
                 </ul>
             </div>
-            <div class="card flex-shrink-0 w-full p-10 max-w-lg shadow-2xl bg-base-100">
+            <div class="card flex-shrink-0 w-full p-10 mb-10 max-w-lg  shadow-2xl bg-base-100 mx-auto">
+                <h2 className='text-center font-bold text-2xl mb-4'>Add Product </h2>
                 <form onSubmit={handleSubmit} className='' id='form'>
                     <div>
                         <h2 className='block'>Product name:</h2>
-                        <input name="name" type='text' required placeholder="Product Name " class="input xl:w-96 lg:w-76 sm:w-48 input-bordered input-sm " />
+                        <input name="name" type='text' required placeholder="Product Name " class="input xl:w-96 lg:w-96 sm:w-52 input-bordered input-sm " />
                     </div>
                     <div>
                         <h2 className='block'>Img Url</h2>
@@ -73,7 +74,7 @@ const AddProduct = () => {
                         </label>
                         <textarea name='desc' class="textarea textarea-bordered xl:w-96 lg:w-76 sm:w-48  h-24" required placeholder="write a short description.."></textarea>
                     </div>
-                    <div class="card-actions justify-end block">
+                    <div class="card-actions justify-center block ">
                         <input type='submit' class="btn btn-primary" value='Add Product' />
                     </div>
                 </form>

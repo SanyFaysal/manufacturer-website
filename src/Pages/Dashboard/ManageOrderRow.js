@@ -21,13 +21,13 @@ const ManageOrderRow = ({ manage, index }) => {
                 </div>
             </td>
             <td>
-                {name}
+                <span>{name}</span>
                 <span class="badge badge-ghost badge-sm">{email}</span>
             </td>
             <td>{quantity} <small>pics</small></td>
             <th className='flex justify-center' >
-                <td><button className='btn btn-sm '>Shipping</button></td>
-                <td> <button className='btn btn-sm btn-success'>Pending</button></td>
+                <td><button className='btn btn-xs'>Shipping</button></td>
+                <td> <button className='btn btn-xs btn-success'>Pending</button></td>
             </th>
         </tr>
     );
