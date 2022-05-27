@@ -15,7 +15,7 @@ const Purchase = () => {
         fetch(`http://localhost:5000/part/${_id}`)
             .then(res => res.json())
             .then(data => {
-                setDetail(data[0])
+                setDetail(data)
             })
     }, [_id])
     const [quant, setQuant] = useState(detail.minimum);
@@ -24,7 +24,6 @@ const Purchase = () => {
         data.desc = desc;
         data.price = price;
         data.img = img;
-
         fetch('http://localhost:5000/part', {
             method: 'POST',
             headers: {
@@ -49,24 +48,25 @@ const Purchase = () => {
         return <Loading></Loading>
     }
     return (
-        <div class="hero max-w-screen-lg pb-10  mx-auto border mb-16 mt-2">
+        <div class="hero max-w-screen-lg pb-10 px-5 bg-slate-50  mx-auto border rounded mb-16 mt-2">
             <div class="hero-content flex-col lg:flex-row">
                 <div class="text-center lg:text-left pr-12">
-                    <figure class="px-10 pt-10 w-64 mx-auto border"><img src={img} alt="Shoes" /></figure>
+                    <figure class="px-10 pt-10 w-64 mx-auto border bg-white rounded"><img src={img} alt="Shoes" /></figure>
                     <h1 class="text-xl  mt-3 font-bold">{name}</h1>
                     <h5 className='mt-2 font-bold'>Description</h5>
                     <p className='mb-3 block'>{desc?.slice(0, 250)}</p>
+                    <p className='my-2 badge  badge-ghost'> In stock : <span className='text-2xl font-bold'> {available}</span> <span className='text-xs font-bold'> pics </span></p>
+                    <p className='badge  ml-2 badge-ghost'>Minimum Order : <span className='text-2xl font-bold'> {minimum}</span> <span>pics</span></p>
                     <p className='text-xl mb-2'>Price :  <span className='text-4xl font-bold text-red-500'>$ {price}</span><small className='text-xs'>/pics</small></p>
-                    <p className='my-2 badge  badge-lg'> In stock : <span className='text-xl font-bold'> {available}</span> <span className='text-xs font-bold'>pics</span></p>
-                    <p className='badge  ml-2 badge-lg'>Minimum Order : <span className='text-xl font-bold'> {minimum}</span> <span>pics</span></p>
                 </div>
-                <div class="card flex-shrink-0 w-full p-10 max-w-sm shadow-2xl bg-base-100">
+                <div class="card flex-shrink-0 w-full p-10 max-w-sm  bg-white border">
+                    <h2 className='font-bold text-center text-2xl'>FILL UP</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='mx-auto w-80'>
                             <label class="label">
                                 <span class="label-text">Name</span>
                             </label>
-                            <input value={user?.displayName} readOnly class="input w-full input-bordered" />
+                            <input {...register("name")} value={user?.displayName} readOnly class="input w-full input-bordered" />
                         </div>
                         <div className='mx-auto w-80'>
                             <label class="label">
@@ -93,7 +93,7 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Quantity</span>
                             </label>
-                            <input {...register("quantity")} defaultValue={quant} class="input w-full input-bordered " onChange={(e) => setQuant(e.target.value)} />
+                            <input {...register("quantity", { required: true })} defaultValue={minimum} class="input w-full input-bordered " onChange={(e) => setQuant(e.target.value)} />
                             {(quant < minimum) && <span className='text-red-500'>Please input minimum {minimum} pics or more </span>}
                             {(quant > available) && <span className='text-red-500'>Please input maximum {available} or fewer </span>}
                         </div>

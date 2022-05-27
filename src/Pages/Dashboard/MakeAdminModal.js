@@ -6,9 +6,9 @@ const MakeAdminModal = ({ adminInfo, refetch }) => {
     const handleMakeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${adminInfo?.email}`, {
             method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
+            // headers: {
+            //     authorization: `Bearer ${localStorage.getIem('accessToken')}`,
+            // },
         })
             .then(res => res.json())
             .then(data => {

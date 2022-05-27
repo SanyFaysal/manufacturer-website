@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 
 const ManageOrderRow = ({ user, index, setAdminInfo }) => {
     const { name, email } = user;
-    console.log(user)
     return (
         <tr>
             <td>{index + 1}</td>

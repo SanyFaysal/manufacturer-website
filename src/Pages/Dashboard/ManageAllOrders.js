@@ -20,7 +20,7 @@ const ManageAllOrders = () => {
                 </ul>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto mb-16">
                 <table class="table table-zebra w-full">
 
                     <thead>

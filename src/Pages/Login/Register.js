@@ -24,12 +24,12 @@ const Register = () => {
         reset()
     };;
     const [user] = useAuthState(auth)
-    const [token] = useToken(user || eUser || gUser)
+    // const [token] = useToken(user || eUser || gUser)
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-    if (token) {
-        // navigate('/home')
+    if (user || gUser || eUser) {
+        navigate('/home')
     }
     return (
         <div class="card shadow-xl max-w-lg mx-auto my-8 py-12">

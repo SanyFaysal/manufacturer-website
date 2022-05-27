@@ -11,7 +11,7 @@ const Headers = () => {
         <li><Link to='/allParts'><Link to='/allParts'>All Parts</Link></Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/blogs'>Blog</Link></li>
-        <li><Link to='/myProfile'>My Profile</Link></li>
+        <li><Link to='/myPortfolio'>My Portfolio</Link></li>
         {user ?
             <div class="dropdown dropdown-end">
                 <div className='flex'>

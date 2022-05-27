@@ -121,7 +121,7 @@ const MyProfile = () => {
                                 <input name='linkedin' required type="text" placeholder="link here / type Not available" class="input input-bordered" />
                             </div>
                             <div class="form-control mt-6">
-                                <button type='submit' class="btn btn-primary">Add Info</button>
+                                <button type='submit' class="btn btn-success">Add Info</button>
                             </div>
                         </form>
                     </div>

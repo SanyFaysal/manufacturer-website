@@ -1,10 +1,12 @@
 import { faDollar, faDollarSign, faMoneyBill, faMoneyCheckDollar, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OrderRow = ({ order, index, setOrder }) => {
-    const { img, partsName, price, name, email, quantity } = order;
-    setOrder(order)
+    const navigate = useNavigate()
+    const { img, partsName, price, name, email, quantity, _id } = order;
+
     return (
         <tr>
             <td>{index + 1}</td>
@@ -22,13 +24,13 @@ const OrderRow = ({ order, index, setOrder }) => {
                 </div>
             </td>
             <td>
-                {name}
+                <span className='block'>{name}</span>
                 <span class="badge badge-ghost badge-sm">{email}</span>
             </td>
-            <td>{quantity} <small>pics</small></td>
+            <td className=''>{quantity} <small>pics</small></td>
             <th className='flex justify-center' >
-                <td><label for="confirmation-cancel-modal"><FontAwesomeIcon icon={faTrash} className='text-2xl  text-red-700 font-bold' title='Delete'></FontAwesomeIcon></label></td>
-                <td>  <FontAwesomeIcon icon={faMoneyCheckDollar} className='text-3xl text-green-600' title='Payment'></FontAwesomeIcon></td>
+                <td><label for="confirmation-cancel-modal"><FontAwesomeIcon icon={faTrash} onClick={() => setOrder(order)} className='text-2xl  text-red-700 font-bold' title='Delete'></FontAwesomeIcon></label></td>
+                <td>  <FontAwesomeIcon icon={faMoneyCheckDollar} onClick={() => navigate(`/dashboard/payment/${_id}`)} className='text-3xl text-green-600' title='Payment'></FontAwesomeIcon></td>
             </th>
         </tr>
     );

@@ -9,7 +9,9 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     const [order, setOrder] = useState()
-    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/parts/${user.email}`).then(res => res.json()));
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/parts/${user.email}`)
+        .then(res => res.json())
+    );
     if (loading || isLoading) {
         return <Loading></Loading>
     }
@@ -35,7 +37,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders?.map((order, index) => <OrderRow
+                            orders.map((order, index) => <OrderRow
                                 key={order._id}
                                 order={order}
                                 index={index}

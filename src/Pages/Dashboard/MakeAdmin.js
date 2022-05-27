@@ -5,9 +5,16 @@ import MakeAdminModal from './MakeAdminModal';
 import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
     const [adminInfo, setAdminInfo] = useState([])
-    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/user').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/user', {
+        // method: 'GET',
+        // headers: {
+        //     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        // }
+    })
+        .then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
+
     }
     return (
         <div>
@@ -23,7 +30,7 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <MakeAdminRow
+                            users?.map((user, index) => <MakeAdminRow
                                 key={user._id}
                                 user={user}
                                 index={index}
