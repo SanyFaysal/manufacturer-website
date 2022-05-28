@@ -44,6 +44,7 @@ const EditProduct = () => {
                     toast.success('Successfully updated Product')
                     document.getElementById('form').reset()
                     refetch()
+
                 }
                 else (
                     toast.error('Nothing new ! ')
@@ -56,7 +57,7 @@ const EditProduct = () => {
     }
     return (
         <div>
-            <div class="card  mx-auto xl:w-9/12 lg:w-9/12  bg-slate-200 mb-12">
+            <div class="card  mx-auto xl:w-9/12 lg:w-9/12 mt-5 bg-slate-200 mb-12">
                 <div class="card-body">
                     <div className='lg:flex xl:flex'>
                         <div class=" text-white rounded-full mx-auto my-auto flex justify-center items-center">

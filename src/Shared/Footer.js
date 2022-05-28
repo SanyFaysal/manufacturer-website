@@ -1,11 +1,12 @@
 import React from 'react';
-
+import logo from '../images/logo (3).png'
 const Footer = () => {
     return (
         <footer class="footer footer-center p-5 bg-black text-white  ">
             <div>
 
                 <p class="font-bold">
+                    <img src={logo} className='my-[-50px]' alt="" />
                     Bicycle Ghor since 2016
                 </p>
                 <p>Copyright © {new Date().getFullYear()} - All right reserved</p>

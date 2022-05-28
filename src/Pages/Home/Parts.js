@@ -15,7 +15,7 @@ const Parts = () => {
     const [admin] = useAdmin(user)
     return (
         <div className='  container mx-auto  '>
-            <h3 className='text-center text-4xl font-bold  py-3'> The main <span className='text-orange-500'>{demo.length}</span> Parts of a bicycle -</h3>
+            <h3 className='text-center text-4xl font-bold  my-8'> The main <span className='text-orange-500'>{demo.length}</span> Parts of a bicycle -</h3>
             <div className='grid lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-5 px-12 bg-base-100'>
                 {
                     demo.map(part => <Part
@@ -26,7 +26,7 @@ const Parts = () => {
                 }
             </div>
             <div className='flex justify-end mr-12 mt-8'>
-                <button class="btn btn-sm btn-secondary "><Link to='/allParts'>See All <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> </Link></button>
+                <button class="btn btn-sm btn-info "><Link to='/allParts'>See All <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> </Link></button>
             </div>
         </div>
     );

@@ -1,7 +1,10 @@
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ManageProductRow = ({ manage, index, setProduct }) => {
+    const navigate = useNavigate()
     const { name, img, desc, minimum, available, price, _id } = manage;
     return (
         <tr>
@@ -22,7 +25,8 @@ const ManageProductRow = ({ manage, index, setProduct }) => {
             <td>{minimum} pics</td>
             <td>{available} pics</td>
             <th className='flex justify-center' >
-                <td><label for="removing-product-confirmation-modal" onClick={() => setProduct(manage)} className=' btn btn-xs'>Remove</label></td>
+                <td><FontAwesomeIcon icon={faPencilAlt} onClick={() => navigate(`/editProduct/${_id}`)} className='text-success'></FontAwesomeIcon></td>
+                <td><label for="removing-product-confirmation-modal" onClick={() => setProduct(manage)} className=' btn btn-xs btn-warning'>Remove</label></td>
             </th >
         </tr >
     );

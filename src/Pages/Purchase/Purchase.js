@@ -51,7 +51,7 @@ const Purchase = () => {
         <div class="hero max-w-screen-lg pb-10 px-5 bg-slate-50  mx-auto border rounded mb-16 mt-2">
             <div class="hero-content flex-col lg:flex-row">
                 <div class="text-center lg:text-left pr-12">
-                    <figure class="px-10 pt-10 w-64 mx-auto border bg-white rounded"><img src={img} alt="Shoes" /></figure>
+                    <figure class="px-10 pt-10 w-64 mx-auto border bg-white rounded-lg shadow-lg "><img src={img} alt="Shoes" /></figure>
                     <h1 class="text-xl  mt-3 font-bold">{name}</h1>
                     <h5 className='mt-2 font-bold'>Description</h5>
                     <p className='mb-3 block'>{desc?.slice(0, 250)}</p>

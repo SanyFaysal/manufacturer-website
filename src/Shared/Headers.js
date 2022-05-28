@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
-
+import logo from '../images/logo (3).png'
 const Headers = () => {
     const [user] = useAuthState(auth)
     const pages = <>
@@ -49,7 +49,9 @@ const Headers = () => {
                         </ul>
                     </div>
                     <div>
-                        <Link to='/' className='text-secondary text-xl '>BiCycle Ghor </Link>
+                        <Link to='/' className='text- text-xl '>
+                            <img src={logo} className='w-32  my-[-35px]' alt="" />
+                        </Link>
                     </div>
                 </div>
                 <div class="navbar-end hidden lg:flex container mx-auto ">
