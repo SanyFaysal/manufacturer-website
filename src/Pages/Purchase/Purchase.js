@@ -12,7 +12,7 @@ const Purchase = () => {
     const [detail, setDetail] = useState({})
     const { name, desc, img, available, minimum, price } = detail;
     useEffect(() => {
-        fetch(`http://localhost:5000/part/${_id}`)
+        fetch(`https://limitless-brook-51245.herokuapp.com/part/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setDetail(data)
@@ -24,7 +24,7 @@ const Purchase = () => {
         data.desc = desc;
         data.price = price;
         data.img = img;
-        fetch('http://localhost:5000/part', {
+        fetch('https://limitless-brook-51245.herokuapp.com/part', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const AddReview = () => {
             email: user?.email,
 
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://limitless-brook-51245.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

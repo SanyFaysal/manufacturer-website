@@ -5,7 +5,7 @@ import ManageOrderRow from './ManageOrderRow';
 const ManageAllOrders = () => {
     const [manageOrder, setMangeOrder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://limitless-brook-51245.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setMangeOrder(data)

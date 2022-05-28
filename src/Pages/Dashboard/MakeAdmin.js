@@ -5,7 +5,7 @@ import MakeAdminModal from './Modal/MakeAdminModal';
 import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
     const [adminInfo, setAdminInfo] = useState([])
-    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('https://limitless-brook-51245.herokuapp.com/user', {
         // method: 'GET',
         // headers: {
         //     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

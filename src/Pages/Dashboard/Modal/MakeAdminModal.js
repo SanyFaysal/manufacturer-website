@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const MakeAdminModal = ({ adminInfo, refetch }) => {
 
     const handleMakeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${adminInfo?.email}`, {
+        fetch(`https://limitless-brook-51245.herokuapp.com/user/admin/${adminInfo?.email}`, {
             method: 'PUT',
             // headers: {
             //     authorization: `Bearer ${localStorage.getIem('accessToken')}`,

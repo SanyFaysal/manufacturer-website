@@ -8,7 +8,7 @@ const ManageProducts = () => {
 
     const [product, setProduct] = useState()
 
-    const { data, isLoading, refetch } = useQuery('product', () => fetch('http://localhost:5000/part').then(res => res.json()))
+    const { data, isLoading, refetch } = useQuery('product', () => fetch('https://limitless-brook-51245.herokuapp.com/part').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }

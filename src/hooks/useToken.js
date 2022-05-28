@@ -7,7 +7,7 @@ const useToken = user => {
             const email = user.email;
             const name = user.displayName;
             const currentUser = { email: email, name: name };
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://limitless-brook-51245.herokuapp.com/user/${email}`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

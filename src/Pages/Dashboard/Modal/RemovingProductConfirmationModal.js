@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const RemovingProductConfirmationModal = ({ product, refetch }) => {
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/removePart/${product?._id}`, {
+        fetch(`https://limitless-brook-51245.herokuapp.com/removePart/${product?._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

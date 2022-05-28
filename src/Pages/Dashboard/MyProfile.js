@@ -11,7 +11,7 @@ import linkedin from '../../images/linkedin-brands.svg'
 const MyProfile = () => {
     const [user, loading] = useAuthState(auth);
     const [checked, setChecked] = useState(false);
-    const { data: details, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/userInfo/${user?.email}`).then(res => res.json()))
+    const { data: details, isLoading, refetch } = useQuery('profile', () => fetch(`https://limitless-brook-51245.herokuapp.com/userInfo/${user?.email}`).then(res => res.json()))
     const handleSubmit = (e) => {
         e.preventDefault();
         const phone = e.target.phone.value;
@@ -28,7 +28,7 @@ const MyProfile = () => {
             degree,
             linkedin
         };
-        fetch('http://localhost:5000/userInfo', {
+        fetch('https://limitless-brook-51245.herokuapp.com/userInfo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

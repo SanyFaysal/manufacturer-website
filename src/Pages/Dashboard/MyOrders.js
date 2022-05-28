@@ -9,7 +9,7 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     const [order, setOrder] = useState()
-    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/parts/${user.email}`)
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`https://limitless-brook-51245.herokuapp.com/parts/${user.email}`)
         .then(res => res.json())
     );
     if (loading || isLoading) {

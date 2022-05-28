@@ -8,7 +8,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L41irIEBBiYU12D99YS28HMYRqicK0Fbo543x3IYYFwrYJaJhEEQeZEBszpe86H3W54KNrjIVhAS59aUUrekHDS00CYPQmm9A');
 const Payment = () => {
     const { id } = useParams();
-    const { data: order, isLoading } = useQuery('order', () => fetch(`http://localhost:5000/order/${id}`).then(res => res.json()))
+    const { data: order, isLoading } = useQuery('order', () => fetch(`https://limitless-brook-51245.herokuapp.com/order/${id}`).then(res => res.json()))
 
     console.log(order)
     if (isLoading) {

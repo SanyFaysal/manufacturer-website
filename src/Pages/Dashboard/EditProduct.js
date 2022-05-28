@@ -9,7 +9,7 @@ import { faPencil, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 const EditProduct = () => {
     const { id } = useParams()
     const [checked, setChecked] = useState(false);
-    const { data: product, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/part/${id}`).then(res => res.json()))
+    const { data: product, isLoading, refetch } = useQuery('profile', () => fetch(`https://limitless-brook-51245.herokuapp.com/part/${id}`).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -31,7 +31,7 @@ const EditProduct = () => {
             desc: editedDesc,
             img: product.img
         };
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://limitless-brook-51245.herokuapp.com/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
