@@ -1,6 +1,9 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-const Part = ({ part }) => {
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
+const Part = ({ part, admin }) => {
     const { name, img, desc, minimum, available, price, _id } = part;
     const navigate = useNavigate();
 
@@ -14,7 +17,11 @@ const Part = ({ part }) => {
                 <p className='text-slate-500'>Min. Order : <span className='font-bold'>{minimum}</span> <small>pics</small></p>
                 <p className=' font-bold text-4xl  text-orange-700'>$ {price}</p>
                 <div class="card-actions justify-end">
-                    <div onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-sm ">Purchase</div>
+                    {admin ?
+                        <div class="btn btn-sm " onClick={() => navigate(`/editProduct/${_id}`)}>Edit Product</div>
+                        : <div onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-sm ">Purchase</div>
+                    }
+
                 </div>
             </div>
         </div>

@@ -22,8 +22,14 @@ import NotFound from './Shared/NotFound';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Blogs from './Pages/Blogs';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import useAdmin from './hooks/useAdmin';
+import EditProduct from './Pages/Dashboard/EditProduct'
 function App() {
+
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user)
   return (
     <div>
       <Headers></Headers>
@@ -32,9 +38,12 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/allParts' element={<AllParts></AllParts>}></Route>
         <Route path='/purchase/:_id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='/editProduct/:id' element={<RequireAuth><EditProduct></EditProduct></RequireAuth>}></Route>
         <Route path='/myOrders' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrders></MyOrders>}></Route>
+          {!admin ?
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            : <Route index element={<ManageAllOrders></ManageAllOrders>}></Route>}
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>

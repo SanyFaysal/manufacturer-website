@@ -24,11 +24,11 @@ const Register = () => {
         reset()
     };;
     const [user] = useAuthState(auth)
-    // const [token] = useToken(user || eUser || gUser)
+    const [token] = useToken(user || eUser || gUser)
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-    if (user || gUser || eUser) {
+    if (token) {
         navigate('/home')
     }
     return (

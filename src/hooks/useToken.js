@@ -6,7 +6,6 @@ const useToken = user => {
         if (user) {
             const email = user.email;
             const name = user.displayName;
-            console.log(user, name)
             const currentUser = { email: email, name: name };
             fetch(`http://localhost:5000/user/${email}`, {
                 method: 'POST',

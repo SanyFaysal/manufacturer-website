@@ -86,7 +86,7 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Phone mobile number </span>
                             </label>
-                            <input {...register("phone", { required: true })} placeholder="password" class="input w-full input-bordered" />
+                            <input {...register("phone", { required: true })} placeholder="phone number" class="input w-full input-bordered" />
                             {errors.phone && <span className='text-error'>Please give your mobile number</span>}
                         </div>
                         <div className=' w-80 mx-auto'>

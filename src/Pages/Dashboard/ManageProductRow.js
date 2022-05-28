@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const ManageOrderRow = ({ manage, index, setManageProduct }) => {
+const ManageProductRow = ({ manage, index, setProduct }) => {
     const { name, img, desc, minimum, available, price, _id } = manage;
     return (
         <tr>
@@ -22,10 +22,10 @@ const ManageOrderRow = ({ manage, index, setManageProduct }) => {
             <td>{minimum} pics</td>
             <td>{available} pics</td>
             <th className='flex justify-center' >
-                <td><label for="confirmation-cancel-modal" onClick={() => setManageProduct(manage)} className=' btn btn-xs'>Remove</label></td>
+                <td><label for="removing-product-confirmation-modal" onClick={() => setProduct(manage)} className=' btn btn-xs'>Remove</label></td>
             </th >
         </tr >
     );
 };
 
-export default ManageOrderRow;
+export default ManageProductRow;

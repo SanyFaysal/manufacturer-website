@@ -1,5 +1,6 @@
-import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons';
-import { faBuilding, faGraduationCap, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
+
+
+import { faGraduationCap, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -17,17 +18,10 @@ const MyPortfolio = () => {
                         <p className=''>
                             <FontAwesomeIcon icon={faGraduationCap}></FontAwesomeIcon> <span className='font-bold'>Completed HSC from Bhawyal Bodre Alam Govt. College</span>
                         </p>
-                        <h2 className='text-2xl font-bold mt-2'> List of technologies:</h2>
-
+                        <h2 className='text-2xl font-bold mt-5 uppercase text-center'>I have experience in these technologies</h2>
+                        <FontAwesomeIcon ></FontAwesomeIcon>
                         <table>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' />React js</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> Mongodb</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> Express js</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> Firebase</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> Tailwind</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> Daisy UI</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> React Router</tr>
-                            <tr><FontAwesomeIcon icon={faArrowAltCircleRight} className='text-red-600' /> React toastify</tr>
+
                         </table>
 
                     </div>

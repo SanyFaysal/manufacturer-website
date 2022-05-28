@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import ManageProductRow from './ManageProductRow'
-import RemovingProductConfirmaitonModal from './Modal/RemovingProductConfirmationModal';
+import RemovingProductConfirmationModal from './Modal/RemovingProductConfirmationModal';
+import Loading from '../../Shared/Loading'
 const ManageProducts = () => {
-    const [managePart, setManagePart] = useState([]);
-    const [manageProduct, setManageProduct] = useState()
-    useEffect(() => {
-        fetch('http://localhost:5000/part')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setManagePart(data)
-            })
-    }, [])
 
+    const [product, setProduct] = useState()
+
+    const { data, isLoading, refetch } = useQuery('product', () => fetch('http://localhost:5000/part').then(res => res.json()))
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div class="text-sm breadcrumbs">
@@ -24,7 +22,7 @@ const ManageProducts = () => {
             </div>
 
             <div class="overflow-x-auto mb-16">
-                <table class="table table-zebra w-full">
+                <table class="table  w-full">
 
                     <thead>
                         <tr>
@@ -37,17 +35,20 @@ const ManageProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            managePart.map((manage, index) => <ManageProductRow
+                            data?.map((manage, index) => <ManageProductRow
                                 key={manage._id}
                                 manage={manage}
                                 index={index}
-                                setManageProduct={setManageProduct}
+                                setProduct={setProduct}
                             ></ManageProductRow>)
                         }
                     </tbody>
                 </table>
             </div>
-            <RemovingProductConfirmaitonModal></RemovingProductConfirmaitonModal>
+            <RemovingProductConfirmationModal
+                product={product}
+                refetch={refetch}
+            ></RemovingProductConfirmationModal>
         </div >
     )
 

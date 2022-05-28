@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd, faCartArrowDown, faGear, faListUl, faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faCartArrowDown, faGear, faListUl, faToolbox, faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import useAdmin from '../../hooks/useAdmin';
@@ -30,7 +30,7 @@ const Dashboard = () => {
                             <>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/manageOrders'><FontAwesomeIcon icon={faGear}></FontAwesomeIcon>Manage Orders</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/addProduct'><FontAwesomeIcon icon={faAdd}></FontAwesomeIcon>Add Product</Link></li>
-                                <li className='font-bold border-b-2'><Link to='/dashboard/manageProduct'><FontAwesomeIcon icon={faAdd}></FontAwesomeIcon>Manage Products</Link></li>
+                                <li className='font-bold border-b-2'><Link to='/dashboard/manageProduct'><FontAwesomeIcon icon={faToolbox}></FontAwesomeIcon>Manage Products</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/makeAdmin'><FontAwesomeIcon icon={faUserTie} ></FontAwesomeIcon>Make Admin</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/myProfile'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon>My Profile</Link></li>
                             </> :
