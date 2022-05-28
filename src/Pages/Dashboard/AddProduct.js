@@ -2,14 +2,14 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const img = e.target.img.value;
-        const available = e.target.available.value;
-        const minimum = e.target.minimum.value;
-        const price = e.target.price.value;
-        const desc = e.target.desc.value;
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const img = event.target.img.value;
+        const available = event.target.available.value;
+        const minimum = event.target.minimum.value;
+        const price = event.target.price.value;
+        const desc = event.target.desc.value;
         const product = {
             name,
             img,
@@ -17,7 +17,6 @@ const AddProduct = () => {
             minimum,
             price,
             desc,
-            process
         }
         fetch('http://localhost:5000/addProduct', {
             method: 'POST',
@@ -26,7 +25,7 @@ const AddProduct = () => {
             },
             body: JSON.stringify(product)
         })
-            .then(res => res.json)
+            .then(res => res.json())
             .then(data => {
                 if (data?.insertedId) {
                     toast.success('SuccessFully Added ')

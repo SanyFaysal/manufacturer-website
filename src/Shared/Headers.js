@@ -40,15 +40,17 @@ const Headers = () => {
         <div className=' bg-black'>
             <div class="navbar  container mx-auto  px-12 text-white">
                 <div class="navbar-start  ">
-                    <div class="dropdown text-black">
-                        <label tabindex="0" class="btn btn-link text-white lg:hidden">
+                    <div class="dropdown text-black ml-0">
+                        <label tabindex="0" class="btn btn-link text-white lg:hidden ml-[-10px]">
                             <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
                         </label>
                         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {pages}
                         </ul>
                     </div>
-                    <Link to='/'>Moto Bike </Link>
+                    <div>
+                        <Link to='/' className='text-secondary text-xl '>BiCycle Ghor </Link>
+                    </div>
                 </div>
                 <div class="navbar-end hidden lg:flex container mx-auto ">
                     <ul class="menu menu-horizontal p-0">

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ManageOrderRow from './ManageOrderRow';
-
-const ManageAllOrders = () => {
-    const [manageOrder, setMangeOrder] = useState([]);
+import ManageProductRow from './ManageProductRow'
+import RemovingProductConfirmaitonModal from './Modal/RemovingProductConfirmationModal';
+const ManageProducts = () => {
+    const [managePart, setManagePart] = useState([]);
+    const [manageProduct, setManageProduct] = useState()
     useEffect(() => {
-        fetch('http://localhost:3000/orders')
+        fetch('http://localhost:5000/part')
             .then(res => res.json())
             .then(data => {
-                setMangeOrder(data)
+                console.log(data);
+                setManagePart(data)
             })
     }, [])
+
     return (
         <div>
             <div class="text-sm breadcrumbs">
@@ -27,26 +30,27 @@ const ManageAllOrders = () => {
                         <tr>
                             <th></th>
                             <th>Parts info</th>
-                            <th>Buyer</th>
-                            <th>Order Quantity</th>
+                            <th>In Stock</th>
+                            <th>Minimum order </th>
                             <th className='text-center'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            manageOrder.map((manage, index) => <ManageOrderRow
+                            managePart.map((manage, index) => <ManageProductRow
                                 key={manage._id}
                                 manage={manage}
                                 index={index}
-                            ></ManageOrderRow>)
+                                setManageProduct={setManageProduct}
+                            ></ManageProductRow>)
                         }
                     </tbody>
                 </table>
             </div>
-
+            <RemovingProductConfirmaitonModal></RemovingProductConfirmaitonModal>
         </div >
     )
 
 };
 
-export default ManageAllOrders;
+export default ManageProducts;

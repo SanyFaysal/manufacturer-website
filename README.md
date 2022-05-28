@@ -1,15 +1,21 @@
-# Getting Started with Create React App
+# BiCycle Ghor 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Live Site [Bicycle Ghor ](https://manufacturer-website-d96c5.web.app/).
 
-## Available Scripts
+## Project details : 
 
-In the project directory, you can run:
+A manufacturer project based on - BiCycle parts. Project details bellow : 
+* Home page showing a simple banner about the services  and here have some products and showing some reviews and business review and a footer . 
+* If a user is loged in he will be able to see his dashboard where he can see his purchase order and if he want he can remove this item. User can update his profile and make a review from dashboard ;
+* If the users role is admin then he will see dashboard where he can add a product and can make any user to admin and can manage the order . 
+* user can create an account by email and password and and social system like google .
+* blog component to answering some question. 
+
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

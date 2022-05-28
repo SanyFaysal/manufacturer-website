@@ -8,7 +8,6 @@ import useAdmin from '../../hooks/useAdmin';
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
     const [admin] = useAdmin(user);
-    console.log(user);
     return (
         <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -31,6 +30,7 @@ const Dashboard = () => {
                             <>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/manageOrders'><FontAwesomeIcon icon={faGear}></FontAwesomeIcon>Manage Orders</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/addProduct'><FontAwesomeIcon icon={faAdd}></FontAwesomeIcon>Add Product</Link></li>
+                                <li className='font-bold border-b-2'><Link to='/dashboard/manageProduct'><FontAwesomeIcon icon={faAdd}></FontAwesomeIcon>Manage Products</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/makeAdmin'><FontAwesomeIcon icon={faUserTie} ></FontAwesomeIcon>Make Admin</Link></li>
                                 <li className='font-bold border-b-2'><Link to='/dashboard/myProfile'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon>My Profile</Link></li>
                             </> :

@@ -21,6 +21,7 @@ import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Shared/NotFound';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Blogs from './Pages/Blogs';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='manageOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageProduct' element={<ManageProducts></ManageProducts>}></Route>
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>

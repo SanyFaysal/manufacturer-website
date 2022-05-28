@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const ManageOrderRow = ({ manage, index }) => {
-    const { partsName, price, img, name, email, quantity } = manage;
+const ManageOrderRow = ({ manage, index, setManageProduct }) => {
+    const { name, img, desc, minimum, available, price, _id } = manage;
     return (
         <tr>
             <td>{index + 1}</td>
@@ -14,21 +14,17 @@ const ManageOrderRow = ({ manage, index }) => {
                         </div>
                     </div>
                     <div>
-                        <div class="font-bold">{partsName?.slice(0, 15)}...</div>
+                        <div class="font-bold">{name?.slice(0, 15)}...</div>
                         <div class="text-sm opacity-75">Price : $ {price}</div>
                     </div>
                 </div>
             </td>
-            <td>
-                <span>{name}</span>
-                <span class="badge badge-ghost badge-sm">{email}</span>
-            </td>
-            <td>{quantity} <small>pics</small></td>
+            <td>{minimum} pics</td>
+            <td>{available} pics</td>
             <th className='flex justify-center' >
-                <td><button className='btn btn-xs'>Shipping</button></td>
-                <td> <button className='btn btn-xs btn-success'>Pending</button></td>
-            </th>
-        </tr>
+                <td><label for="confirmation-cancel-modal" onClick={() => setManageProduct(manage)} className=' btn btn-xs'>Remove</label></td>
+            </th >
+        </tr >
     );
 };
 

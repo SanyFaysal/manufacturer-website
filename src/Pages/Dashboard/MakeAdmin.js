@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
-import MakeAdminModal from './MakeAdminModal';
+import MakeAdminModal from './Modal/MakeAdminModal';
 import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
     const [adminInfo, setAdminInfo] = useState([])

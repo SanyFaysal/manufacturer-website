@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
-import CancelOrderConfirmModal from './CancelOrderConfirmModal';
+import CancelOrderConfirmModal from './Modal/CancelOrderConfirmModal';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {

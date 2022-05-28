@@ -10,8 +10,7 @@ const useAdmin = (user) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
-                        console.log(data);
-                        // const admin = data[0]?.role === 'admin'
+                        const admin = data[0]?.role === 'admin'
                         setAdmin(admin)
                         setAdminLoading(true)
                     }
