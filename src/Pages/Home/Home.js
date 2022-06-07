@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from './Banner';
+import Banner from './Banner/Banner';
 import BusinessSummary from './BusinessSummary';
 import Features from './Features';
 import Parts from './Parts';

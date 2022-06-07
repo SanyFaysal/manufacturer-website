@@ -1,0 +1,14 @@
+.bike {
+    animation-duration: 5s;
+    animation-name: bike;
+}
+
+@keyframes bike {
+    from {
+        margin-right: -50%;
+    }
+
+    to {
+        margin-right: 0%;
+    }
+}

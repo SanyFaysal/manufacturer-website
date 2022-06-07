@@ -1,7 +1,8 @@
 # BiCycle Ghor 
 
 Project Live Site [Bicycle Ghor ](https://manufacturer-website-d96c5.web.app/).
-
+Admin Email : kayes@gmail.com
+Admin Password: 111111
 ## Project details : 
 
 A manufacturer project based on - BiCycle parts. Project details bellow : 
